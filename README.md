@@ -5,4 +5,4 @@ Mở `index.html` bằng trình duyệt.
 - 7 biểu mẫu cho Quản lý danh mục dự án.
 - 11 biểu mẫu cho Quản lý chất lượng & cải tiến quy trình.
 - Viewport đề xuất: 1440 × 900.
-- Toàn bộ dữ liệu là dữ liệu minh họa.
+- Bộ biểu mẫu được trình bày như hồ sơ nghiệp vụ hoàn chỉnh để phục vụ tài liệu và báo cáo quy trình.
