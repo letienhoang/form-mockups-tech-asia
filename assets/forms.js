@@ -54,6 +54,21 @@ function normalizeBusinessPresentation() {
   document.querySelectorAll('[placeholder]').forEach((element) => {
     element.placeholder = sanitize(element.placeholder);
   });
+
+  // The summary status card should contain only the status itself.
+  // Responsibility/owner information already appears in the form body, so
+  // repeating it below the status badge makes the summary row look unbalanced.
+  document.querySelectorAll('.summary .card').forEach((card) => {
+    const statusBadge = card.querySelector('[data-status], [data-demo-status]');
+    if (!statusBadge) return;
+
+    card.querySelectorAll('.h').forEach((helperText) => helperText.remove());
+
+    const valueContainer = statusBadge.closest('.v');
+    if (valueContainer) {
+      valueContainer.style.marginTop = '9px';
+    }
+  });
 }
 
 document.addEventListener('DOMContentLoaded', normalizeBusinessPresentation);
