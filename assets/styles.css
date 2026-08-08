@@ -1,10 +1,10 @@
 :root{--navy:#1F3864;--blue:#3F7EA6;--green:#6AA65C;--orange:#E8A33D;--bg:#F4F7FA;--surface:#fff;--border:#D6DEE8;--text:#333;--muted:#6B7280;--success:#3B9A3B;--danger:#B5312D;--bluep:#DAE8FC;--greenp:#D5E8D4;--yellowp:#FFF2CC;--redp:#F8CECC;--shadow:0 2px 8px rgba(31,56,100,.10)}
 *{box-sizing:border-box}
 html{font-size:16px}
-body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;color:var(--text);line-height:1.45;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);font-family:"Segoe UI",Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;color:var(--text);line-height:1.45;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{text-decoration:none;color:inherit}
-button,input,select,textarea{font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;line-height:1.35}
-header{background:linear-gradient(115deg,var(--navy),#2c568d);color:#fff;border-bottom:4px solid var(--orange)}
+button,input,select,textarea{font-family:"Segoe UI",Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;line-height:1.35}
+header{background:linear-gradient(115deg,var(--navy),#2c568d);color:#fff}
 .header{width:min(1280px,calc(100% - 48px));margin:auto;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px}
 .mark{width:44px;height:44px;border:2px solid rgba(255,255,255,.55);border-radius:10px;display:grid;place-items:center;font-size:16px;font-weight:800}
@@ -15,12 +15,12 @@ nav a{padding:8px 10px;border-radius:7px;color:rgba(255,255,255,.92);font-size:1
 nav a:hover{background:rgba(255,255,255,.14)}
 main{width:min(1280px,calc(100% - 48px));margin:24px auto 48px}
 .top{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
-.kicker{margin:0 0 5px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-h1{margin:0;color:var(--navy);font-size:30px;font-weight:800;line-height:1.18;letter-spacing:-.01em}
-.desc{margin:7px 0 0;max-width:900px;color:var(--muted);font-size:14px;line-height:1.45}
+.kicker{margin:0 0 7px;color:#356F99;font-size:11px;font-weight:700;line-height:1.2;letter-spacing:.055em;text-transform:uppercase}
+h1{margin:0;color:var(--navy);font-size:27px;font-weight:700;line-height:1.22;letter-spacing:-.015em}
+.desc{margin:7px 0 0;max-width:900px;color:var(--muted);font-size:13.5px;line-height:1.45}
 .demo{display:none!important}
 .actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
-.btn{min-height:38px;padding:9px 14px;border:1px solid transparent;border-radius:8px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;line-height:1.15;letter-spacing:0;white-space:nowrap;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s ease,border-color .15s ease,box-shadow .15s ease,transform .15s ease}
+.btn{min-height:38px;padding:9px 14px;border:1px solid transparent;border-radius:8px;font-family:"Segoe UI",Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;line-height:1.15;letter-spacing:0;white-space:nowrap;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s ease,border-color .15s ease,box-shadow .15s ease,transform .15s ease}
 .btn:hover{transform:translateY(-1px);box-shadow:0 3px 9px rgba(31,56,100,.12)}
 .btn-p{background:var(--navy);color:#fff}
 .btn-s{background:#fff;color:var(--navy);border-color:var(--blue)}
@@ -54,19 +54,19 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);bo
 .table td{padding:9px;border-top:1px solid #e3e8ee;vertical-align:top;font-size:12px;font-weight:400}
 .table tbody tr:nth-child(even){background:#f8fafc}
 .num{text-align:right}
-.badge{display:inline-flex;align-items:center;justify-content:center;min-height:24px;padding:5px 9px;border-radius:999px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;line-height:1.1;letter-spacing:0;white-space:nowrap}
+.badge{display:inline-flex;align-items:center;justify-content:center;min-height:24px;padding:5px 9px;border-radius:999px;font-family:"Segoe UI",Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;line-height:1.1;letter-spacing:0;white-space:nowrap}
 .ok{background:var(--greenp);color:#296629}.wait{background:var(--yellowp);color:#765700}.info{background:var(--bluep);color:#315d91}.risk{background:var(--redp);color:#913b37}.neutral{background:#e9edf3;color:#4b5563}
 .readonly{padding:11px 12px;background:#f2f7fb;border-left:4px solid var(--blue);border-radius:7px;font-size:12.5px;line-height:1.4}
 .foot{margin-top:15px;padding:13px;background:#fff;border:1px solid var(--border);border-radius:11px;display:flex;justify-content:space-between;gap:12px;align-items:center;box-shadow:var(--shadow)}
 .foot small{color:var(--muted);font-size:11.5px;line-height:1.3}
 .index-head{padding:28px;border-radius:15px;background:linear-gradient(125deg,var(--navy),#2f5f98);color:#fff;box-shadow:0 10px 28px rgba(31,56,100,.13)}
-.index-head h1{color:#fff;font-size:32px}
+.index-head h1{color:#fff;font-size:29px;font-weight:700}
 .index-head p{color:rgba(255,255,255,.84);font-size:14px}
-.group-title{margin:26px 0 10px;color:var(--navy);font-size:21px;font-weight:800}
+.group-title{margin:26px 0 10px;color:var(--navy);font-size:20px;font-weight:700}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
 .form-card{background:#fff;border:1px solid var(--border);border-top:5px solid var(--blue);border-radius:10px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:178px}
 .form-card.q{border-top-color:var(--green)}
-.form-card h3{margin:0;color:var(--navy);font-size:16px;font-weight:800;line-height:1.25}
+.form-card h3{margin:0;color:var(--navy);font-size:16px;font-weight:700;line-height:1.25}
 .form-card p{color:var(--muted);font-size:12.5px;line-height:1.45}
 .form-card a{margin-top:auto;align-self:flex-start}
 @media(max-width:1000px){.summary{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:repeat(2,1fr)}}
