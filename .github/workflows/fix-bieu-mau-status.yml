@@ -1,0 +1,60 @@
+name: Fix bieu-mau status badge
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  fix-status-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Patch status badge layout
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          html = Path('test/bieu-mau.html')
+          text = html.read_text(encoding='utf-8')
+
+          old_head = '.form-head{display:flex;justify-content:space-between;gap:16px;padding:20px 22px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfcfe)}'
+          new_head = '.form-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:20px 22px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfcfe)}'
+
+          old_status = '.status{display:inline-flex;padding:6px 9px;border-radius:999px;font-weight:800;font-size:12px;white-space:nowrap}'
+          new_status = '.status{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;padding:6px 9px;border-radius:999px;font-weight:800;font-size:12px;white-space:nowrap}'
+
+          if old_head in text:
+              text = text.replace(old_head, new_head, 1)
+          elif new_head not in text:
+              raise SystemExit('Could not find expected .form-head CSS rule')
+
+          if old_status in text:
+              text = text.replace(old_status, new_status, 1)
+          elif new_status not in text:
+              raise SystemExit('Could not find expected .status CSS rule')
+
+          html.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit fix and remove one-off workflow
+        shell: bash
+        run: |
+          rm -f .github/workflows/fix-bieu-mau-status.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add test/bieu-mau.html .github/workflows/fix-bieu-mau-status.yml
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          git commit -m "Fix stretched status badge in SPX mockups"
+          git push origin master
